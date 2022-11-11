@@ -6,19 +6,19 @@ import { Apartment } from './apartments.model';
 export class ApartmentsService {
   constructor(@InjectModel(Apartment) private repository: typeof Apartment) {}
 
-  public async findAll(offset: number) {
-    return await this.repository.findAll({
-      limit: 6,
-      offset: offset,
-      order: ['id'],
-    });
-  }
-
   public async getById(id: number) {
     return await this.repository.findOne({
       where: {
         id: id,
       },
+    });
+  }
+
+  public async list(offset: number, sort: string) {
+    return await this.repository.findAll({
+      limit: 6,
+      offset: offset,
+      order: [sort],
     });
   }
 }

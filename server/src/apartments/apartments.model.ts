@@ -31,6 +31,6 @@ export class Apartment extends Model<Apartment> {
   @Column({ type: DataType.FLOAT })
   area_live: number;
 
-  @Column({ type: DataType.STRING })
+  @Column({ type: DataType.STRING(256) })
   layout_image: string;
 }
