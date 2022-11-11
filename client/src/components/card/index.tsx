@@ -8,11 +8,11 @@ interface ICardProps extends HTMLProps<HTMLElement> {
     rooms: number;
 }
 
-const Card: FC<ICardProps> = ({layout_image, price, rooms}) => {
+const Card: FC<ICardProps> = ({layout_image, price, rooms, onClick}) => {
     return (
         <>
-            <div className={styles.card}>
-                <img width={300} src={layout_image} alt=""/>
+            <div className={styles.card} onClick={onClick}>
+                <img className={styles.img} width={300} src={layout_image} alt=""/>
                 <div className={styles.info}>
                     <h1>Price: {price}</h1>
                     <h3>Rooms: {rooms}</h3>

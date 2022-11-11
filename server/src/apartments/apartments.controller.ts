@@ -19,6 +19,11 @@ export class ApartmentsController {
     return res.status(HttpStatus.OK).json(apartments);
   }
 
+  @Get('count')
+  public async count() {
+    return this.service.count();
+  }
+
   @Get(':id')
   public async get(@Param('id', OffsetPipe) id: number) {
     return this.service.getById(id);

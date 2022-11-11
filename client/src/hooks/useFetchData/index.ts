@@ -1,14 +1,15 @@
-import axios from "axios";
 import {useEffect, useState} from "react";
-import {Apartment} from "./types";
+import useApiCall from "../useApiCall";
+import {Apartment} from "../../types/types";
 
 const useFetchData = (offset: number) => {
+    const host = useApiCall();
     const [queryEnd, setQueryEnd] = useState<boolean>(false);
     const [error, setError] = useState<boolean>(false);
     const [data, setData] = useState<Apartment[]>([]);
 
     useEffect(() => {
-        axios.get<Apartment[]>(`http://127.0.0.1:666/apartments?offset=${offset}`).then(res => {
+        host.get<Apartment[]>(`/apartments?offset=${offset}`).then(res => {
             if (res.status === 200) {
                 setData(res.data);
             }
@@ -21,6 +22,5 @@ const useFetchData = (offset: number) => {
     }, []);
     return {data, queryEnd, error};
 }
-
 
 export default useFetchData;

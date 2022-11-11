@@ -14,6 +14,10 @@ export class ApartmentsService {
     });
   }
 
+  public async count() {
+    return await this.repository.count();
+  }
+
   public async list(offset: number, sort: string) {
     return await this.repository.findAll({
       limit: 6,

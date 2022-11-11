@@ -1,0 +1,19 @@
+.card {
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+  color: var(--white);
+  cursor: pointer;
+}
+
+.info {
+  border-radius: 12px;
+  background-color: #343440;
+  padding: 50px 25px 0 20px;
+  font-size: 32px;
+}
+
+.img {
+  border-radius: 12px;
+}

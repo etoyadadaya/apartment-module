@@ -1,11 +1,11 @@
 .card {
-  background: var(--grey);
+  background: var(--white);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 32px;
   padding: 32px;
   display: flex;
   gap: 32px;
-  color: var(--white);
+  color: var(--black);
   cursor: pointer;
 }
 
@@ -13,4 +13,14 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+
+@media (max-width: 1280px) {
+  .card {
+    flex-direction: column;
+  }
+
+  .img {
+    width: 100%;
+  }
 }

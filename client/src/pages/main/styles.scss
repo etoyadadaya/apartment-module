@@ -1,6 +1,30 @@
 .wrapper {
-  display: grid;
-  grid-gap: 20px;
-  grid-template-columns: 1fr 1fr;
-  margin: 30px 60px;
+    margin: 30px 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.cards {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 920px) {
+  .wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    margin: 15px 20px;
+  }
 }
