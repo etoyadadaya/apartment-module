@@ -1,0 +1,16 @@
+.card {
+  background: var(--grey);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 32px;
+  padding: 32px;
+  display: flex;
+  gap: 32px;
+  color: var(--white);
+  cursor: pointer;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
