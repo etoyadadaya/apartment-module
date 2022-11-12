@@ -9,3 +9,5 @@ export type Apartment = {
     area_live: number,
     layout_image: string
 }
+
+export type Sort = "id" | "price" | "rooms" | "floor" | "area_total" | "pos_on_floor" | "area_kitchen" | "area_live";

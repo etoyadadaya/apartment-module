@@ -3,7 +3,7 @@ import {ValidationException} from "../exceptions/validation.exception";
 
 @Injectable()
 export class SortPipe implements PipeTransform<string> {
-    private readonly array = ["id", "floor", "price", "rooms", "area_total", "area_kitchen", "area_live"];
+    private readonly array = ["id", "floor", "price", "rooms", "area_total", "area_kitchen", "area_live", "pos_on_floor"];
 
     transform(value: string = "id", metadata: ArgumentMetadata): string {
         let valid = false;

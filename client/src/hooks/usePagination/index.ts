@@ -1,8 +1,8 @@
 import {useEffect, useState} from "react";
 import useApiCall from "../useApiCall";
-import {Apartment} from "../../types/types";
+import {Apartment, Sort} from "../../types/types";
 
-const usePagination = () => {
+const usePagination = (sort: Sort) => {
     const host = useApiCall();
 
     const elementsPerPage = 6;
@@ -19,12 +19,12 @@ const usePagination = () => {
     }, []);
 
     useEffect(() => {
-        host.get<Apartment[]>(`/apartments?offset=${(page - 1) * elementsPerPage}`).then(res => {
+        host.get<Apartment[]>(`/apartments?offset=${(page - 1) * elementsPerPage}&sort=${sort}`).then(res => {
             if (res.status === 200) {
                 setData(res.data);
             }
         })
-    }, [page]);
+    }, [page, sort]);
 
     const prevPage = () => {
         setPage(page - 1);
