@@ -23,6 +23,7 @@
   background-color: var(--white);
   transform: scale(.5);
   transition: transform .3s;
+  z-index: 666;
 
   &.active {
     transform: scale(1);

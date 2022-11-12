@@ -15,7 +15,7 @@ const Pagination: FC<IPaginationProps> = ({nextPage, prevPage, current, maxPage}
             <div className={styles.pagination}>
                 <button className={styles.button} onClick={prevPage} disabled={current - 1 === 0}>Prev</button>
                 <div className={styles.counter}>{current}</div>
-                <button className={styles.button} onClick={nextPage} disabled={current + 1 === maxPage}>Next</button>
+                <button className={styles.button} onClick={nextPage} disabled={current + 1 > maxPage}>Next</button>
             </div>
         </>
     );

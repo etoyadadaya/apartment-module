@@ -45,6 +45,8 @@ const Header: FC<IHeaderProps> = ({callback, setIsActive}) => {
                                 <rect x="53" y="61" width="24" height="8" fill="black"/>
                             </svg>
                         </Button>
+                    </div>
+                    <div className={styles.buttons}>
                         <Button>
                             <select ref={mainRef} onChange={mainHandleChange} className={styles.select}>
                                 <option value="id">Main settings</option>

@@ -10,10 +10,6 @@ import Details from "../../components/details";
 import Header from "../../components/header";
 import useInfiniteScroll from "../../hooks/useInfinityScroll";
 
-//TODO: фильтрация квартир (сортировка по разным параметрам),
-// разделить на важные и допы, прикрутить свитч, инфинити скроллинг,
-// перерубить карточки на скроллинг списком, доп кнопочки в пагинации.
-
 const Main: FC = () => {
     const ref = useRef();
 
@@ -44,7 +40,7 @@ const Main: FC = () => {
                             return <Card onClick={() => {
                                 setApartment(el);
                                 setIsModalActive(true);
-                            }} layout_image={el.layout_image} price={el.price} rooms={el.rooms} key={key}/>
+                            }} layout_image={el.layout_image} price={el.price} rooms={el.rooms} key={key} area_total={el.area_total} floor={el.floor} max_floor={4}/>
                         })}
                     </div>
                     :
@@ -53,7 +49,7 @@ const Main: FC = () => {
                         return <Card onClick={() => {
                             setApartment(el);
                             setIsModalActive(true);
-                        }} layout_image={el.layout_image} price={el.price} rooms={el.rooms} key={key}/>
+                        }} layout_image={el.layout_image} price={el.price} rooms={el.rooms} area_total={el.area_total} floor={el.floor} key={key} max_floor={4}/>
                     })}
                 </div>}
                 {!isColumn && <Pagination nextPage={nextPage} prevPage={prevPage} current={page} maxPage={maxPage}/>}

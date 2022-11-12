@@ -6,7 +6,6 @@
 }
 
 .cards {
-    margin-top: 80px;
     display: grid;
     grid-gap: 20px;
     grid-template-columns: 1fr 1fr;
@@ -16,7 +15,6 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  margin-top: 80px;
   overflow-y: auto;
   height: calc(100vh - 80px);
 }
