@@ -42,14 +42,13 @@
 }
 
 .vl {
-  border-left: 1px solid  #e1e1e1;;
+  border-left: 1px solid  #e1e1e1;
 }
 
 .about {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  height: 60%;
 }
 
 .aboutName {
@@ -70,7 +69,21 @@
     flex-direction: column;
   }
 
+  .additional {
+    gap: 10px;
+  }
+
   .img {
     width: 100%;
+  }
+}
+
+@media (max-width: 280px) {
+  .vl {
+    display: none;
+  }
+
+  .none {
+    display: none;
   }
 }

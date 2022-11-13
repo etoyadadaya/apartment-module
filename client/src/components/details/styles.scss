@@ -1,3 +1,14 @@
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.closeIcon {
+  width: 24px;
+  height: 24px;
+}
+
 .card {
   border-radius: 12px;
   display: flex;
@@ -54,12 +65,12 @@
   padding: 15px 15px;
   text-align: center;
   display: inline-block;
-  border: 1px solid var(--black);
   font-size: 20px;
+  cursor: pointer;
+  transition: background-color .3s;
 
   &:hover {
     background-color: blue;
-    cursor: pointer;
   }
 }
 
@@ -71,10 +82,13 @@
   display: inline-block;
   border: 1px solid dodgerblue;
   font-size: 20px;
+  cursor: pointer;
+  transition: background-color, color, border .3s;
 
   &:hover {
     background-color: ghostwhite;
-    cursor: pointer;
+    border: 1px solid blue;
+    color: blue;
   }
 }
 
@@ -96,10 +110,15 @@
 
 .overviewAbout {
   font-size: 18px;
+  max-width: 500px;
 }
 
 .describe {
   width: 20%;
+}
+
+.flex {
+  display: flex;
 }
 
 .img {
@@ -128,6 +147,15 @@
 
   .info {
     font-size: 16px;
+    padding: 0;
+  }
+
+  .head {
+    flex-direction: column;
+  }
+
+  .none {
+    display: none;
   }
 }
 

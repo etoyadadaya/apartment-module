@@ -19,14 +19,12 @@
   height: calc(100vh - 80px);
 }
 
-@media (max-width: 920px) {
+@media (max-width: 1600px) {
   .wrapper {
-    display: flex;
     align-items: center;
   }
 
   .cards {
-    display: grid;
     grid-template-columns: 1fr;
   }
 }

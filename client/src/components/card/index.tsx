@@ -16,7 +16,7 @@ const Card: FC<ICardProps> = ({layout_image, price, rooms, floor, area_total, ma
         <>
             <div className={styles.card} onClick={onClick}>
                 <img className={styles.img} width={300} src={layout_image} alt=""/>
-                <div className={styles.vl}></div>
+                <div className={styles.vl}/>
                 <div className={styles.info}>
                     <h1>{price}$</h1>
                     <div className={styles.additional}>
@@ -28,7 +28,7 @@ const Card: FC<ICardProps> = ({layout_image, price, rooms, floor, area_total, ma
                                 </svg>
                                 {rooms}
                             </div>
-                            <h3>Bedrooms</h3>
+                            <h3 className={styles.none}>Bedrooms</h3>
                         </div>
                         <div className={styles.vl}></div>
                         <div className={styles.name}>
@@ -38,7 +38,7 @@ const Card: FC<ICardProps> = ({layout_image, price, rooms, floor, area_total, ma
                                 </svg>
                                 {floor}/{max_floor}
                             </div>
-                            <h3>Floor</h3>
+                            <h3 className={styles.none}>Floor</h3>
                         </div>
                         <div className={styles.vl}></div>
                         <div className={styles.name}>
@@ -48,7 +48,7 @@ const Card: FC<ICardProps> = ({layout_image, price, rooms, floor, area_total, ma
                                 </svg>
                                 {area_total}м²
                             </div>
-                            <h3>Total Area</h3>
+                            <h3 className={styles.none}>Total Area</h3>
                         </div>
                     </div>
                     <div className={styles.about}>

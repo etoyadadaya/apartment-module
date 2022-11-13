@@ -31,7 +31,7 @@ const Main: FC = () => {
     return (
         <>
             <Modal isActive={isModalActive} setIsActive={setIsModalActive}>
-                <Details apartment={apartment}/>
+                <Details callback={setIsModalActive} apartment={apartment}/>
             </Modal>
             <div className={styles.wrapper}>
                 <Header callback={setSort} setIsActive={setIsColumn}/>
