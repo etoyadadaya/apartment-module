@@ -2,7 +2,6 @@ import {join, resolve} from "path";
 import {Configuration as WebpackConfiguration} from "webpack";
 import {Configuration as WebpackDevServerConfiguration} from "webpack-dev-server";
 import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
-import ESLintPlugin from "eslint-webpack-plugin";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import {CleanWebpackPlugin} from "clean-webpack-plugin";
@@ -138,9 +137,6 @@ module.exports = (
       }),
       new ForkTsCheckerWebpackPlugin({
         async: false
-      }),
-      new ESLintPlugin({
-        extensions: ["js", "jsx", "ts", "tsx"],
       }),
     ],
     performance: {
