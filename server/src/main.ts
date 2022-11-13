@@ -5,7 +5,10 @@ import helmet from "helmet";
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.use(helmet());
-  app.enableCors();
+  app.enableCors({
+    origin: "https://apartment-module.pages.dev",
+    optionsSuccessStatus: 200
+  });
   await app.listen(666);
 }
 

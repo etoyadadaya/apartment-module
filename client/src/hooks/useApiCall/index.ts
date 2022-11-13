@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const apiURL = "http://127.0.0.1:666";
+const apiURL = "https://api.marquesdae.ru";
 
 const host = axios.create({
   baseURL: apiURL,
