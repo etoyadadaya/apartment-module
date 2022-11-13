@@ -115,13 +115,7 @@ const Card: FC<ICardProps> = ({
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis
           massa at elit tempus suscipit. Phasellus id est fermentum lorem
           accumsan fermentum a in enim. Cras volutpat, sem et eleifend molestie,
-          purus est hendrerit mi, a placerat enim nisl rutrum nisl. Vestibulum
-          pretium nisi a justo posuere, sit amet hendrerit metus sollicitudin.
-          Suspendisse tempus accumsan maximus. Pellentesque nec dui ultricies,
-          posuere felis ut, faucibus risus. Vestibulum gravida blandit sem vitae
-          hendrerit. Nullam eget faucibus velit. Nullam et tristique diam, a
-          elementum nulla. Vivamus rhoncus aliquam ante. Vestibulum tincidunt
-          ante vitae ante vulputate, mollis ultrices risus malesuada.
+          purus est hendrerit mi, a placerat enim nisl rutrum nisl.
         </div>
       </div>
     </div>

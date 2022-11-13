@@ -7,11 +7,6 @@
   gap: 32px;
   color: var(--black);
   cursor: pointer;
-
-  &:hover {
-    border: 1px solid #e1e1e1;
-    margin: -1px;
-  }
 }
 
 .info {
@@ -58,7 +53,6 @@
 
 .description {
   color: grey;
-  height: 110px;
   display: flex;
   overflow: hidden;
 }
@@ -67,6 +61,10 @@
 @media (max-width: 1280px) {
   .card {
     flex-direction: column;
+
+    &:last-child {
+      margin-bottom: 60px;
+    }
   }
 
   .additional {
