@@ -23,7 +23,6 @@
 }
 
 .body {
-  top: 0;
   position: absolute;
   padding: 20px;
   border-radius: 12px;
@@ -33,5 +32,11 @@
 
   &.active {
     transform: scale(1);
+  }
+}
+
+@media (max-width: 1024px) {
+  .body {
+    top: 0;
   }
 }
