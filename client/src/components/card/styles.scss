@@ -7,6 +7,11 @@
   gap: 32px;
   color: var(--black);
   cursor: pointer;
+
+  &:hover {
+    border: 1px solid #e1e1e1;
+    margin: -1px;
+  }
 }
 
 .info {
@@ -14,6 +19,51 @@
   flex-direction: column;
   gap: 16px;
 }
+
+.additional {
+  display: flex;
+  gap: 20px;
+}
+
+.name {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.count{
+  display: flex;
+  gap: 10px;
+  font-size: 16px;
+}
+
+.img {
+  pointer-events: none;
+}
+
+.vl {
+  border-left: 1px solid  #e1e1e1;;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 60%;
+}
+
+.aboutName {
+  display: flex;
+  gap: 5px;
+}
+
+.description {
+  color: grey;
+  height: 110px;
+  display: flex;
+  overflow: hidden;
+}
+
 
 @media (max-width: 1280px) {
   .card {
