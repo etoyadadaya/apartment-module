@@ -4,7 +4,7 @@
 Модуль поиска и отображения квартир в одной секции 4х-этажного жилого дома.
 
 ## Стэк:
-React, NodeJS, TypeScript.
+React, NodeJS, NestJS, TypeScript.
 
 База данных: PostgreSQL.
 
