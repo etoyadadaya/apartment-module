@@ -104,7 +104,7 @@ const Header: FC<IHeaderProps> = ({callback, setIsActive, setIsMenuActive}) => {
               />
             </svg>
           </Button>
-          <Button onClick={() => setIsMenuActive(true)}>
+          <Button className={styles.burger} onClick={() => setIsMenuActive(true)}>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M20 12.9975V11.0024H4V12.9975H20Z" fill="black"/>
               <path d="M20 7.99503V6H4V7.99503H20Z" fill="black"/>

@@ -17,6 +17,10 @@
   gap: 8px;
 }
 
+.burger {
+  display: none;
+}
+
 .select {
   background-color: transparent;
 
@@ -28,5 +32,9 @@
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
+  }
+
+  .burger {
+    display: block;
   }
 }

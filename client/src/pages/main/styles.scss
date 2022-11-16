@@ -37,4 +37,8 @@
   .filter {
     display: none !important;
   }
+
+  .infinity {
+    height: calc(100vh - 80px);
+  }
 }
