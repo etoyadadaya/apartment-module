@@ -19,3 +19,23 @@ export type Sort =
   | "pos_on_floor"
   | "area_kitchen"
   | "area_live";
+
+export type filter = {
+  rooms: number,
+  price: {
+    from: number,
+    to: number,
+  },
+  area: {
+    from: number,
+    to: number,
+  },
+  kitchen_area: {
+    from: number,
+    to: number,
+  },
+  live_area: {
+    from: number,
+    to: number,
+  },
+};
