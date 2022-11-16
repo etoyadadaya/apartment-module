@@ -14,12 +14,6 @@ import Filter from "../../components/filter";
 const Main: FC = () => {
     const ref = useRef();
 
-    const [isModalActive, setIsModalActive] = useState<boolean>(false);
-    const [apartment, setApartment] = useState<Apartment>(undefined);
-    const [sort, setSort] = useState<Sort>("id");
-    const {data, maxPage, page, prevPage, nextPage} = usePagination(sort);
-    const [isColumn, setIsColumn] = useState<boolean>(false);
-    const infiniteScroll = useInfiniteScroll(ref, sort);
     const [filter, setFilter] = useState<filter>({
         area: {from: 0, to: 0},
         kitchen_area: {from: 0, to: 0},
@@ -27,6 +21,13 @@ const Main: FC = () => {
         price: {from: 0, to: 0},
         rooms: 0,
     });
+    const [ctx, setCtx] = useState<boolean>(false);
+    const [isModalActive, setIsModalActive] = useState<boolean>(false);
+    const [apartment, setApartment] = useState<Apartment>(undefined);
+    const [sort, setSort] = useState<Sort>("id");
+    const {data, maxPage, page, prevPage, nextPage} = usePagination(sort, filter, ctx);
+    const [isColumn, setIsColumn] = useState<boolean>(false);
+    const infiniteScroll = useInfiniteScroll(ref, sort, filter, ctx);
 
     useEffect(() => {
         if (isColumn) {
@@ -36,8 +37,6 @@ const Main: FC = () => {
         }
     }, [isColumn]);
 
-    console.log(filter);
-
     return (
         <>
             <Modal isActive={isModalActive} setIsActive={setIsModalActive}>
@@ -45,7 +44,7 @@ const Main: FC = () => {
             </Modal>
             <div className={styles.wrapper}>
                 <Header callback={setSort} setIsActive={setIsColumn}/>
-                <Filter callback={setFilter} current={filter} />
+                <Filter callback={setFilter} current={filter} setCtx={setCtx} ctx={ctx}/>
                 {isColumn ? <div className={styles.infinity} onScroll={infiniteScroll.onScroll} ref={ref}>
                         {infiniteScroll.data.map((el, key) => {
                             return <Card onClick={() => {

@@ -7,11 +7,11 @@ import {filter} from "../../types/types";
 interface IFilterProps extends HTMLProps<HTMLElement> {
     callback: Dispatch<filter>;
     current: filter;
+    setCtx: Dispatch<boolean>;
+    ctx: boolean;
 }
 
-const Filter: FC<IFilterProps> = ({callback, current}) => {
-    const roomsRef = useRef<HTMLSelectElement>();
-
+const Filter: FC<IFilterProps> = ({callback, current, setCtx, ctx}) => {
     const roomChange = useCallback(
         (e: FormEvent<HTMLSelectElement>) => {
             callback({
@@ -23,20 +23,6 @@ const Filter: FC<IFilterProps> = ({callback, current}) => {
             });
         },
         [callback, current]
-    );
-
-    const clear = useCallback(
-        () => {
-            callback({
-                area: {from: 0, to: 0},
-                kitchen_area: {from: 0, to: 0},
-                live_area: {from: 0, to: 0},
-                price: {from: 0, to: 0},
-                rooms: 0,
-            });
-            roomsRef.current.value = "0";
-        },
-        [callback]
     );
 
     const setPriceFrom = useCallback(
@@ -167,6 +153,13 @@ const Filter: FC<IFilterProps> = ({callback, current}) => {
         [callback, current]
     );
 
+    const apply = useCallback(
+        () => {
+            setCtx(!ctx);
+        },
+        [ctx]
+    );
+
     return (
         <div className={styles.wrapper}>
             <div className={styles.wrap}>
@@ -175,7 +168,6 @@ const Filter: FC<IFilterProps> = ({callback, current}) => {
                     <button className={styles.button}>
                         <select
                             onChange={roomChange}
-                            ref={roomsRef}
                             className={styles.select}
                         >
                             <option value={0}>Room</option>
@@ -215,8 +207,8 @@ const Filter: FC<IFilterProps> = ({callback, current}) => {
                 </div>
             </div>
             <div className={styles.wrap}>
-                <button className={styles.clear} onClick={clear}>Clear</button>
-                <button className={styles.apply}>Apply</button>
+                <div/>
+                <button className={styles.apply} onClick={apply}>Apply</button>
             </div>
         </div>
     );
