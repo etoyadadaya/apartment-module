@@ -1,8 +1,9 @@
-import React, {Dispatch, FC, FormEvent, HTMLProps, useCallback, useRef} from "react";
+import React, {Dispatch, FC, FormEvent, HTMLProps, useCallback} from "react";
 
 import styles from "./styles.scss";
 import Input from "../input";
 import {filter} from "../../types/types";
+import clsx from "clsx";
 
 interface IFilterProps extends HTMLProps<HTMLElement> {
     callback: Dispatch<filter>;
@@ -11,7 +12,7 @@ interface IFilterProps extends HTMLProps<HTMLElement> {
     ctx: boolean;
 }
 
-const Filter: FC<IFilterProps> = ({callback, current, setCtx, ctx}) => {
+const Filter: FC<IFilterProps> = ({callback, className, current, setCtx, ctx}) => {
     const roomChange = useCallback(
         (e: FormEvent<HTMLSelectElement>) => {
             callback({
@@ -161,7 +162,7 @@ const Filter: FC<IFilterProps> = ({callback, current, setCtx, ctx}) => {
     );
 
     return (
-        <div className={styles.wrapper}>
+        <div className={clsx([styles.wrapper], [className])}>
             <div className={styles.wrap}>
                 <div className={styles.column}>
                     <h3>Room</h3>

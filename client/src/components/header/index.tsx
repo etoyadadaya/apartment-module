@@ -15,9 +15,10 @@ import {parseSort} from "../../helpers";
 interface IHeaderProps extends HTMLProps<HTMLElement> {
   callback: Dispatch<Sort>;
   setIsActive: Dispatch<boolean>;
+  setIsMenuActive: Dispatch<boolean>;
 }
 
-const Header: FC<IHeaderProps> = ({callback, setIsActive}) => {
+const Header: FC<IHeaderProps> = ({callback, setIsActive, setIsMenuActive}) => {
   const mainRef = useRef<HTMLSelectElement>();
   const additionalRef = useRef<HTMLSelectElement>();
 
@@ -101,6 +102,13 @@ const Header: FC<IHeaderProps> = ({callback, setIsActive}) => {
                 height="8"
                 fill="black"
               />
+            </svg>
+          </Button>
+          <Button onClick={() => setIsMenuActive(true)}>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 12.9975V11.0024H4V12.9975H20Z" fill="black"/>
+              <path d="M20 7.99503V6H4V7.99503H20Z" fill="black"/>
+              <path d="M20 18V16.005H4V18H20Z" fill="black"/>
             </svg>
           </Button>
         </div>

@@ -15,6 +15,7 @@ const usePagination = (sort: Sort, filter: filter, ctx: boolean) => {
     host.get(urlShortBuilder(sort, filter)).then(res => {
       if (res.status === 200) {
         setMaxPage(Math.ceil(res.data / elementsPerPage));
+        setData([]);
       }
     });
   }, [ctx]);

@@ -10,6 +10,7 @@ import Details from "../../components/details";
 import Header from "../../components/header";
 import useInfiniteScroll from "../../hooks/useInfinityScroll";
 import Filter from "../../components/filter";
+import Menu from "../../components/menu";
 
 const Main: FC = () => {
     const ref = useRef();
@@ -23,6 +24,7 @@ const Main: FC = () => {
     });
     const [ctx, setCtx] = useState<boolean>(false);
     const [isModalActive, setIsModalActive] = useState<boolean>(false);
+    const [isMenuActive, setIsMenuActive] = useState<boolean>(false);
     const [apartment, setApartment] = useState<Apartment>(undefined);
     const [sort, setSort] = useState<Sort>("id");
     const {data, maxPage, page, prevPage, nextPage} = usePagination(sort, filter, ctx);
@@ -42,9 +44,12 @@ const Main: FC = () => {
             <Modal isActive={isModalActive} setIsActive={setIsModalActive}>
                 <Details callback={setIsModalActive} apartment={apartment}/>
             </Modal>
-            <div className={styles.wrapper}>
-                <Header callback={setSort} setIsActive={setIsColumn}/>
+            <Menu active={isMenuActive} setActive={setIsMenuActive}>
                 <Filter callback={setFilter} current={filter} setCtx={setCtx} ctx={ctx}/>
+            </Menu>
+            <div className={styles.wrapper}>
+                <Header callback={setSort} setIsActive={setIsColumn} setIsMenuActive={setIsMenuActive}/>
+                <Filter className={styles.filter} callback={setFilter} current={filter} setCtx={setCtx} ctx={ctx}/>
                 {isColumn ? <div className={styles.infinity} onScroll={infiniteScroll.onScroll} ref={ref}>
                         {infiniteScroll.data.map((el, key) => {
                             return <Card onClick={() => {

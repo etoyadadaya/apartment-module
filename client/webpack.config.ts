@@ -127,7 +127,7 @@ module.exports = (
       }),
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
-        template: "./src/html/index.html",
+        template: "./src/html/index.tsx",
         minify: true
       }),
       new CopyPlugin({
